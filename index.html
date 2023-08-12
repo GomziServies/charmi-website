@@ -61,11 +61,10 @@
 					</div>
 					<div class="col-lg-6 d-none d-lg-inline-block text-center nav-center-wrap">
 						<ul class="js-clone-nav  text-center site-menu p-0 m-0">
-							<li class=""><a href="index.html">Home</a></li>
-							<li><a href="#about">About us</a></li>
-							<li><a href="#service">Services</a></li>
-							<li><a href="#contact">Contect Us</a></li>
-
+							<li><a href="index.html">Home</a></li>
+							<li><a href="index.html?#about">About</a></li>
+							<li><a href="index.html?service">Services</a></li>
+							<li><a href="index.html?contact">Contect Us</a></li>
 						</ul>
 					</div>
 					<div class="col-6 col-lg-3 d-inline-block d-lg-none  text-lg-end">
@@ -735,6 +734,23 @@
 			}
 		});
 	</script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			// Get the #about link
+			var aboutLink = document.querySelector('a[id="About"]');
+
+			// Get the collapsible menu element
+			var collapsibleMenu = document.querySelector('#main-navbar');
+
+			// Add a click event listener to the #about link
+			aboutLink.addEventListener('click', function () {
+				// Remove the 'show' class from the collapsible menu
+				collapsibleMenu.classList.remove('show');
+			});
+		});
+	</script>
+
+
 	<script>
 		$('.owl-carousel').owlCarousel({
 			loop: true,
